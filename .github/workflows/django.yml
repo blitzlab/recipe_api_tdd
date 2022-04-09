@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
     - name: Check lint with Flake8
       run: |
-        sh -c "python manage.py flake8"
+        flake8 .
     - name: Run Tests
       run: |
         python manage.py test
