@@ -18,7 +18,7 @@ jobs:
       run: docker build . --file Dockerfile --tag recipe_api_tdd:$(date +%s)
     - name: Check lint with Flake8
       run: |
-        docker-compose run app sh -c "python manage.py flake8"
+        flake8 .
     - name: Run Tests
       run: |
         docker-compose run app sh -c "python manage.py test && flake8"
